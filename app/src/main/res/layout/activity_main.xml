@@ -9,11 +9,10 @@
     android:textColor="@color/white"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ListView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
-        android:layout_height="555dp"
-        android:textColor="@color/white" />
+        android:layout_height="558dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
