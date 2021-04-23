@@ -28,7 +28,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
+import java.util.List;
+
 public class signIn extends AppCompatActivity {
+
+    static List<String> cFavorites;
+    static FirebaseUser mUser;
 
     private FirebaseAuth mAuth;
     private EditText pw;
@@ -40,7 +45,7 @@ public class signIn extends AppCompatActivity {
     private static final int RC_SIGN_IN = 9001;
     private static final String TAG = "SignInActivity";
     //private static final String client_id = "1040922306146-lvb8lucutf76ncqu0v6t8c30h4913edp.apps.googleusercontent.com";
-    FirebaseUser mUser;
+    //FirebaseUser mUser;
     GoogleSignInClient mGoogleSignInClient;
 
     @Override
@@ -114,6 +119,12 @@ public class signIn extends AppCompatActivity {
                     }
                 });
 
+    }
+    public static List<String> getFavs(){
+        return cFavorites;
+    }
+    public static FirebaseUser getUser(){
+        return mUser;
     }
 
     /*

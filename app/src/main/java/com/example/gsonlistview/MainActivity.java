@@ -18,8 +18,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private final String[] stocks = {"IBM","AAPL","GOOGL","AMZN","TSLA"};
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     ListView example;
     //StockRecyclerAdapter exampleAdapter;
     StockListAdapter exampleAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         }
         });
     }
+
 
     /*
     private void doView(){
