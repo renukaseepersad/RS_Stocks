@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         for(String s : stocks) {
-            String url = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={{REPLACE_KEY}}&apikey= {}".replace("{{REPLACE_KEY}}",s);
+            String url = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={{REPLACE_KEY}}&apikey=KN687CW0J75UU9M1".replace("{{REPLACE_KEY}}",s);
             RequestQueue queue = Volley.newRequestQueue(this);
 
 
