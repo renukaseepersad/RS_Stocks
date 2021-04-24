@@ -12,15 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GSONListView">
 
-
-
         <activity
             android:name=".MainActivity"
-            android:parentActivityName=".signIn"/>
+            />
         <activity android:name=".HomeActivity"/>
         <activity android:name=".FavActivity"/>
-        <activity android:name=".ChartActivity"/>
-        <activity android:name=".signIn">
+        <activity android:name=".ChartActivity">
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

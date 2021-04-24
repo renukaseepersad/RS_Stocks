@@ -2,10 +2,13 @@ package com.example.gsonlistview;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +18,7 @@ import android.widget.Toast;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -88,6 +92,38 @@ public class MainActivity extends AppCompatActivity {
 
         //Init firebase
         mAuth = FirebaseAuth.getInstance();
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item){
+                switch (item.getItemId()) {
+                    case R.id.action_home:
+                        Toast.makeText(com.example.gsonlistview.MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                        //Intent intentMain = new Intent (nav_bar.this, MainActivity.class);
+                        // startActivity(intentMain);
+                        Intent intentHome = new Intent(MainActivity.this, HomeActivity.class);
+                        startActivity(intentHome);
+                        break;
+                    case R.id.action_favorites:
+                        Toast.makeText(com.example.gsonlistview.MainActivity.this, "Favorites", Toast.LENGTH_SHORT).show();
+                        //Intent intentHome = new Intent(MainActivity.this, HomeActivity.class);
+                        //startActivity(intentHome);
+
+                        //change this to call favoritesFragment
+                        Intent intentFav = new Intent(MainActivity.this, FavoritesFragment.class);
+                        startActivity(intentFav);
+
+                        break;
+                    case R.id.action_charts:
+                        Toast.makeText(com.example.gsonlistview.MainActivity.this, "Charts", Toast.LENGTH_SHORT).show();
+
+                        Intent intentChart = new Intent(MainActivity.this, ChartActivity.class);
+                        startActivity(intentChart);
+                }
+                return true;
+            }
+        });
 
 
     }

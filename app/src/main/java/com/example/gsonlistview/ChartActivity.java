@@ -34,7 +34,7 @@ public class ChartActivity extends AppCompatActivity {
                         break;
                     case R.id.action_favorites:
                         Toast.makeText(ChartActivity.this, "Favorites", Toast.LENGTH_SHORT).show();
-                        Intent intentFav = new Intent(ChartActivity.this, FavActivity.class);
+                        Intent intentFav = new Intent(ChartActivity.this, FavoritesFragment.class);
                         startActivity(intentFav);
                         break;
                     case R.id.action_charts:
