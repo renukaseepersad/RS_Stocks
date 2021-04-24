@@ -39,6 +39,7 @@ public class signIn extends AppCompatActivity {
     private EditText pw;
     private EditText un;
     private Button login;
+    private TextView error;
     private Button signup;
     SignInButton signInButton;
     Button signOutButton;
@@ -107,13 +108,13 @@ public class signIn extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
 
                             mUser = mAuth.getCurrentUser();
-                            // error.setText("signInWithEmail:success " +  mUser.getEmail().toString());
+                            error.setText("signInWithEmail:success " +  mUser.getEmail().toString());
                             Intent intentMain = new Intent (signIn.this, MainActivity.class);
                             startActivity(intentMain);
 
                         } else {
                             // If sign in fails, display a message to the user.
-                            // error.setText("signInWithEmail:failure" +  task.getException().toString());
+                            error.setText("signInWithEmail:failure" +  task.getException().toString());
 
                         }
                     }

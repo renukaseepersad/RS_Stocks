@@ -1,5 +1,5 @@
 package com.example.gsonlistview;
-
+/*
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,3 +80,5 @@ public class StockRecyclerAdapter extends RecyclerView.Adapter<StockRecyclerAdap
 
 
 }
+
+ */

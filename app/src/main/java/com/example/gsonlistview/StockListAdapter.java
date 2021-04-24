@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class StockListAdapter extends ArrayAdapter<Stock> {
+
     Context mContext;
 
 
@@ -25,18 +26,25 @@ public class StockListAdapter extends ArrayAdapter<Stock> {
         Stock stock = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.recycler_view_item, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_stock, parent, false);
         }
         // Lookup views for data population
-        TextView ltd = (TextView) convertView.findViewById(R.id.ltd);
-        TextView cp = (TextView) convertView.findViewById(R.id.cp);
+        TextView cp = (TextView) convertView.findViewById(R.id.change_percent);
         TextView symbol = (TextView) convertView.findViewById(R.id.symbol);
-        TextView price = (TextView) convertView.findViewById(R.id.price);
+
         // Populate the data into the template view using the data object
-        cp.setText(stock.getChange_percent());
-        ltd.setText(stock.getLatest_trading_day());
+        char char_indicator = stock.getChangePercent().charAt(0);
+
+        if(char_indicator == '-'){
+            cp.setTextColor(mContext.getResources().getColor(R.color.stock_red));
+        }
+        else{
+            cp.setTextColor(mContext.getResources().getColor(R.color.stock_green));
+        }
+
+        cp.setText(stock.getChangePercent());
         symbol.setText(stock.getSymbol());
-        price.setText(stock.getPrice());
+
         // Return the completed view to render on screen
         return convertView;
     }

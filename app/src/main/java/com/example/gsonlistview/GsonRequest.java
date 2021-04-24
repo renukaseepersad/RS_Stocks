@@ -1,5 +1,5 @@
 package com.example.gsonlistview;
-
+/*
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
@@ -25,6 +25,7 @@ public class GsonRequest<T> extends Request<T> {
      * @param clazz Relevant class object, for Gson's reflection
      * @param headers Map of request headers
      */
+/*
     public GsonRequest(String url, Class<T> clazz, Map<String, String> headers,
                        Response.Listener<T> listener, Response.ErrorListener errorListener) {
         super(Request.Method.GET, url, errorListener);
@@ -59,3 +60,4 @@ public class GsonRequest<T> extends Request<T> {
         }
     }
 }
+*/
