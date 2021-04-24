@@ -1,5 +1,6 @@
 package com.example.gsonlistview;
 
+/*
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,7 +33,7 @@ import java.util.List;
 
 public class signIn extends AppCompatActivity {
 
-    static List<String> cFavorites;
+    //static List<String> cFavorites;
     static FirebaseUser mUser;
 
     private FirebaseAuth mAuth;
@@ -121,12 +122,13 @@ public class signIn extends AppCompatActivity {
                 });
 
     }
-    public static List<String> getFavs(){
-        return cFavorites;
-    }
-    public static FirebaseUser getUser(){
-        return mUser;
-    }
+   // public static List<String> getFavs(){
+  //      return cFavorites;
+   // }
+   // public static FirebaseUser getUser(){
+     //   return mUser;
+    //}
+
 
     /*
     // this function calls the new activity to display
@@ -135,7 +137,7 @@ public class signIn extends AppCompatActivity {
     startActivity(intent);
     //}
      */
-
+/*
     public void onSignupClick(View v){
         String email = un.getText().toString();
         String password = pw.getText().toString();
@@ -217,3 +219,5 @@ public class signIn extends AppCompatActivity {
 
 
 }
+
+ */

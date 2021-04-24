@@ -17,12 +17,12 @@ public class WriteDBTask extends TimerTask {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         Map<String, Object> user = new HashMap<>();
-        List<String> str = signIn.getFavs();
+        List<String> str = MainActivity.getFavs();
         user.put("Favorites", str);
         System.out.println("Timer DB Write");
 
         // Add a new document with a generated ID
-        db.collection("users").document(signIn.getUser().getEmail())
+        db.collection("users").document(MainActivity.getUser().getEmail())
                 .set(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

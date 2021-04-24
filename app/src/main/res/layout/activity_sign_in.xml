@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".signIn">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -114,7 +114,12 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="Renuka Seepersad Z23375879"
                 android:textAlignment="center"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/error"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
 
         </LinearLayout>
 
