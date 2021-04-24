@@ -13,10 +13,12 @@
         android:theme="@style/Theme.GSONListView">
 
         <activity
-            android:name=".MainActivity"
-            />
-        <activity android:name=".HomeActivity"/>
-        <activity android:name=".FavActivity"/>
+            android:name="com.example.gsonlistview.HomeActivity"
+            android:parentActivityName="com.example.gsonlistview.MainActivity" />
+
+        <activity
+            android:name="com.example.gsonlistview.FavActivity"
+            android:parentActivityName="com.example.gsonlistview.HomeActivity" />
         <activity android:name=".ChartActivity">
 
 
