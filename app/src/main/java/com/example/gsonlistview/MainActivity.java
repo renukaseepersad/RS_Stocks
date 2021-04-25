@@ -32,10 +32,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Source;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Timer;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -48,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
     private Button signup;
     private TextView error;
     static FirebaseUser mUser;
+
+    static FirebaseFirestore DB;
 
     SignInButton signInButton;
     Button signOutButton;
@@ -111,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                         //startActivity(intentHome);
 
                         //change this to call favoritesFragment
-                        Intent intentFav = new Intent(MainActivity.this, FavoritesFragment.class);
+                        Intent intentFav = new Intent(MainActivity.this, FavActivity.class);
                         startActivity(intentFav);
 
                         break;
@@ -123,10 +128,45 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return true;
             }
+
         });
 
 
+        DB = FirebaseFirestore.getInstance();
+        DocumentReference docRef = DB.collection("users").document(MainActivity.getUser().getEmail());
+
+
+
+        Source source = Source.DEFAULT;
+
+        // Get the document, forcing the SDK to use the offline cache
+        docRef.get(source).addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    // Document found in the offline cache
+                    DocumentSnapshot document = task.getResult();
+                    if (document.getData().get("Favorites") != null){
+                        MainActivity.setFavs((List<String>)document.getData().get("Favorites"));
+                    }
+                    System.out.println("Cached document data: " + document.getData());
+                } else {
+                    System.out.println("GET FAILED");
+                }
+            }
+        });
+
+        WriteDBTask task = new WriteDBTask();
+        Timer timer = new Timer("DB Timer");
+        timer.schedule(task,60000L,60000L);
+
     }
+
+    public static FirebaseFirestore getDB(){
+        return DB;
+    }
+
+
 
 
     @Override
@@ -276,6 +316,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 }
 
 

@@ -29,12 +29,12 @@ public class HomeActivity extends AppCompatActivity {
                         // startActivity(intentMain);
                         //Intent intentMain = new Intent(HomeActivity.this, MainActivity.class);
                         //startActivity(intentMain);
-                        Intent intentHome = new Intent(HomeActivity.this, MainActivity.class);
+                        Intent intentHome = new Intent(HomeActivity.this, HomeActivity.class);
                         startActivity(intentHome);
                         break;
                     case R.id.action_favorites:
                         Toast.makeText(com.example.gsonlistview.HomeActivity.this, "Favorites", Toast.LENGTH_SHORT).show();
-                        Intent intentFav = new Intent(HomeActivity.this, FavoritesFragment.class);
+                        Intent intentFav = new Intent(HomeActivity.this, FavActivity.class);
                         startActivity(intentFav);
                         break;
                     case R.id.action_charts:
