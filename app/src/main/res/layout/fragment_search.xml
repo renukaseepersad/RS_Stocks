@@ -19,6 +19,7 @@
             android:layout_width="344dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
             android:ems="10"
             android:hint="Enter a symbol to search..."
             android:inputType="textPersonName" />
