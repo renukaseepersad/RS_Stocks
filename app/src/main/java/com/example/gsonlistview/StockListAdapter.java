@@ -32,6 +32,8 @@ public class StockListAdapter extends ArrayAdapter<Stock> {
         TextView cp = (TextView) convertView.findViewById(R.id.change_percent);
         TextView symbol = (TextView) convertView.findViewById(R.id.symbol);
         TextView open = (TextView) convertView.findViewById(R.id.open);
+        TextView high = (TextView) convertView.findViewById(R.id.high);
+        TextView low = (TextView) convertView.findViewById(R.id.low);
 
         // Populate the data into the template view using the data object
         char char_indicator = stock.getChangePercent().charAt(0);
@@ -46,6 +48,8 @@ public class StockListAdapter extends ArrayAdapter<Stock> {
         cp.setText(stock.getChangePercent());
         symbol.setText(stock.getSymbol());
         open.setText(stock.getOpen());
+        high.setText(stock.getHigh());
+        low.setText(stock.getLow());
 
         // Return the completed view to render on screen
         return convertView;

@@ -15,7 +15,7 @@
 
             <TextView
                 android:id="@+id/symbol"
-                android:layout_width="230dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="SYMBOL" />
@@ -23,8 +23,23 @@
             <TextView
                 android:id="@+id/open"
                 android:layout_gravity="center"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:text="OPEN"/>
+
+            <TextView
+                android:id="@+id/high"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:text="HIGH"/>
+
+            <TextView
+                android:id="@+id/low"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:text="LOW"/>
 
 
             <TextView

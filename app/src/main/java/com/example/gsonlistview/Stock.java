@@ -54,5 +54,11 @@ public class Stock {
 
     public String getOpen(){ return open;}
 
+    public String getHigh(){ return high;}
+
+    public String getLow(){ return low;}
+
+
+
 
 }
