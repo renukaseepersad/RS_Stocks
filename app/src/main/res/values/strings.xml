@@ -3,4 +3,7 @@
     <string name="API_KEY">KN687CW0J75UU9M1</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_bottom_nav">MainActivity</string>
+    <string name="title_search">Search</string>
+    <string name="title_favorites">Favorites</string>
 </resources>

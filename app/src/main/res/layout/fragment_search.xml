@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     android:orientation="vertical"
-    tools:context="StockSearchFragment" >
 
+    tools:context=".ui.search.StockSearchFragment" >
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -33,6 +34,5 @@
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 
 </LinearLayout>

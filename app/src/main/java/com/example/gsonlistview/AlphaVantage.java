@@ -7,16 +7,20 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 
 public class AlphaVantage {
-    static com.example.gsonlistview.AlphaVantage instance;
+    static AlphaVantage instance;
     HashMap<String,Stock> cache;
     static final String API_URL = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={{SYMBOL}}&apikey={{APIKEY}}";
     static String API_KEY = "KN687CW0J75UU9M1";
@@ -30,9 +34,9 @@ public class AlphaVantage {
     }
 
     //Standard singleton getInstance()
-    public static com.example.gsonlistview.AlphaVantage getInstance(){
+    public static AlphaVantage getInstance(){
         if (instance == null){
-            instance = new com.example.gsonlistview.AlphaVantage();
+            instance = new AlphaVantage();
         }
         return instance;
     }
@@ -48,7 +52,7 @@ public class AlphaVantage {
         t = new Thread(new Runnable() {
             ArrayList<Stock> mStocks = stocks;
             String arg = symbol;
-            com.example.gsonlistview.AlphaVantage network = com.example.gsonlistview.AlphaVantage.getInstance();
+            AlphaVantage network = AlphaVantage.getInstance();
 
             @Override
             public void run() {

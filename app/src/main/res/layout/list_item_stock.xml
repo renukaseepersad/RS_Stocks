@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layouttop"
+
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -14,10 +15,17 @@
 
             <TextView
                 android:id="@+id/symbol"
-                android:layout_width="300dp"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="SYMBOL" />
+
+            <TextView
+                android:id="@+id/open"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:text="OPEN"/>
+
 
             <TextView
                 android:id="@+id/change_percent"

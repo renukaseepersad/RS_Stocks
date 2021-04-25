@@ -11,17 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GSONListView">
-
         <activity
-            android:name="com.example.gsonlistview.HomeActivity"
-            android:parentActivityName="com.example.gsonlistview.MainActivity" />
-
-        <activity
-            android:name="com.example.gsonlistview.FavActivity"
-            android:parentActivityName="com.example.gsonlistview.HomeActivity" />
-        <activity android:name=".ChartActivity">
-
-
+            android:name=".BottomNavActivity"
+            android:label="@string/title_activity_bottom_nav"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

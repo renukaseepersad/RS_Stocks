@@ -1,8 +1,6 @@
-package com.example.gsonlistview;
+package com.example.gsonlistview.ui.search;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,29 +8,19 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.gsonlistview.MainActivity;
-import com.example.gsonlistview.StockSearchFragment;
-import com.example.gsonlistview.Stock;
-import com.example.gsonlistview.AlphaVantage;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.gsonlistview.AlphaVantage;
+import com.example.gsonlistview.MainActivity;
 import com.example.gsonlistview.R;
+import com.example.gsonlistview.Stock;
 import com.example.gsonlistview.StockListAdapter;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class StockSearchFragment extends Fragment {
 
@@ -46,9 +34,11 @@ public class StockSearchFragment extends Fragment {
 
 
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_stock_search, container, false);
+        View root = inflater.inflate(R.layout.fragment_search, container, false);
+
         mStocks = new ArrayList<Stock>();
         return root;
     }
@@ -95,8 +85,6 @@ public class StockSearchFragment extends Fragment {
 
     }
 
-
-
     public void onSearch(){
         //TODO: Validation
         AlphaVantage av = AlphaVantage.getInstance();
@@ -109,6 +97,4 @@ public class StockSearchFragment extends Fragment {
 
 
     }
-
-
 }

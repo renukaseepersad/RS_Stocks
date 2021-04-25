@@ -19,6 +19,7 @@ public class Stock {
     public static String UP_DELTA = "\u0394";
     public static String DOWN_DELTA = "\u2207";
 
+
     Stock(JSONObject o) throws JSONException {
         timestamp = new Date();
         JSONObject stock = o.getJSONObject("Global Quote");
@@ -50,6 +51,8 @@ public class Stock {
     public String getChangePercent(){
         return change_percent;
     }
+
+    public String getOpen(){ return open;}
 
 
 }

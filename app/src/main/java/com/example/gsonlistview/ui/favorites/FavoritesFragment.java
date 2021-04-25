@@ -1,22 +1,20 @@
-package com.example.gsonlistview;
+package com.example.gsonlistview.ui.favorites;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
 import com.example.gsonlistview.MainActivity;
 import com.example.gsonlistview.R;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -24,14 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-
 public class FavoritesFragment extends Fragment {
-
-
 
     Button button;
 
@@ -55,6 +46,8 @@ public class FavoritesFragment extends Fragment {
                 onClickToast();
             }
         });
+
+
     }
 
     public void onClickToast(){
@@ -70,6 +63,7 @@ public class FavoritesFragment extends Fragment {
         List<String> str = new ArrayList<String>();
         str.add("IBM");
         str.add("AAPL");
+        str.add("TSLA");
         user.put("Favorites", str);
         for(String s : MainActivity.getFavs()){
             System.out.println(s);
@@ -92,7 +86,4 @@ public class FavoritesFragment extends Fragment {
                 });
 
     }
-
-
-
 }
