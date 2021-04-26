@@ -61,8 +61,8 @@ public class FavoritesFragment extends Fragment {
 
         Map<String, Object> user = new HashMap<>();
         List<String> str = new ArrayList<String>();
-        str.add("IBM");
-        str.add("AAPL");
+        str.add("FRSX");
+        str.add("IZEA");
         str.add("TSLA");
         user.put("Favorites", str);
         for(String s : MainActivity.getFavs()){

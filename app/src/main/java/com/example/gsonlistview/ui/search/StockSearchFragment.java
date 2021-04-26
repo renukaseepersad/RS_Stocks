@@ -28,7 +28,7 @@ public class StockSearchFragment extends Fragment {
     ImageButton mSearch;
     ListView mList;
     ArrayList<Stock> mStocks;
-    String[] mTestStocks = {"IBM","AAPL"};
+    String[] mTestStocks = {"FRSX","iZEA","TSLA"};
     ListView mStockListView;
     StockListAdapter mStockListAdapter;
 
